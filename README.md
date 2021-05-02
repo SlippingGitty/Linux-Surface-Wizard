@@ -1,6 +1,6 @@
-# Linux-Surface Wizard for Debian-based Distros
+# Linux-Surface Wizard for Debian-based Distros that use systemd
 
-Requirements: `dialog` `nano`
+Requirements: `dialog` and `bash`
 
 ## Using:
 * Run `bash <( curl -s https://raw.githubusercontent.com/SlippingGitty/Linux-Surface-Wizard/main/SurfaceLinuxSetupWizard.sh )` in a terminal.
