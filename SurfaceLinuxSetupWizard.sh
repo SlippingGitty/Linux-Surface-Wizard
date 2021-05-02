@@ -57,7 +57,7 @@ clear
                 ;;
             5)
             dialog  --title "Surface-Linux Setup Wizard" --infobox "CAUTION. \n\nGRUB is a bootloader, and that's like, very important! Removing or adding something could be detrimental. \n\nUnless you know what you are doing, you most likely don't need to be here." 10 70;sleep 5
-            sudo nano /etc/default/grub
+            sudo $EDITOR /etc/default/grub
             sudo update-grub
              # This is here so I can comment out GRUB-TIMEOUT=0 and GRUB_TIMEOUT_STYLE=hidden
                 ;;
