@@ -28,17 +28,18 @@ while [ "$CHOICE -ne 4" ]; do
                 2>&1 >/dev/tty)
 
 #OPTIONS NAMES
-OPTIONS=(1 "Import keys and add repo"
-         2 "Install kernel modules"
-         3 "Install touchscreen support"
-         4 "Enable secure boot"
-         5  "Edit /etc/default/grub"
-         6 "Update GRUB and Finish")
+OPTIONS=(1  "Import keys and add repo"
+         2  "Install kernel modules"
+         3  "Install touchscreen support"
+         4  "Enable secure boot"
+         5  "Show GRUB menu"
+         6  "Update GRUB and Finish")
 
 #OPTIONS IN EXECUTION
 clear
     case $CHOICE in
-            1) wget -qO - https://raw.githubusercontent.com/linux-surface/linux-surface/master/pkg/keys/surface.asc \
+            1) 
+                wget -qO - https://raw.githubusercontent.com/linux-surface/linux-surface/master/pkg/keys/surface.asc \
     | gpg --dearmor | sudo dd of=/etc/apt/trusted.gpg.d/linux-surface.gpg && echo "deb [arch=amd64] https://pkg.surfacelinux.com/debian release main" \
 	| sudo tee /etc/apt/sources.list.d/linux-surface.list && sudo apt update
             # Signs the repos needed to install the surface-linux packages
@@ -56,14 +57,14 @@ clear
             # Installs and enables secure boot
                 ;;
             5)
-            dialog  --title "Surface-Linux Setup Wizard" --infobox "CAUTION. \n\nGRUB is a bootloader, and that's like, very important! Removing or adding something could be detrimental. \n\nUnless you know what you are doing, you most likely don't need to be here." 10 70;sleep 5
-            sudo $EDITOR /etc/default/grub
-            sudo update-grub
-             # This is here so I can comment out GRUB-TIMEOUT=0 and GRUB_TIMEOUT_STYLE=hidden
+                dialog  --title "Surface-Linux Setup Wizard" --infobox "This is going to remove GRUB_TIME=0 from your /etc/default/grub file. \n\nGRUB is a bootloader, and that's like, very important! \n\nYou can manually add this back yourself if you wish to hide it again." 10 70;sleep 5
+                sudo sed -i 's/\<GRUB_TIMEOUT=0\>//g' /etc/default/grub
+                sudo update-grub
+             # Removes the timeout for GRUB and shows the menu
                 ;;
             6)
-            sudo update-grub
-            exit
+                sudo update-grub
+                exit
                 ;;
     esac
 done
