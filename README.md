@@ -3,9 +3,7 @@
 Requirements: `dialog` `nano`
 
 ## Using:
-* Download the [script](https://raw.githubusercontent.com/SlippingGitty/Linux-Surface-Wizard/main/SurfaceLinuxSetupWizard.sh)
-* Open a terminal and type `bash /path/to/SurfaceLinuxSetupWizard.sh`
-
+* Run `bash <( curl -s https://raw.githubusercontent.com/SlippingGitty/Linux-Surface-Wizard/main/SurfaceLinuxSetupWizard.sh )` in a terminal.
 # ![screenshot](https://files.catbox.moe/dlm761.png)
 
 ### What does this do?
