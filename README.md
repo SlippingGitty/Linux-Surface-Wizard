@@ -15,11 +15,11 @@ Check the script yourself and cross examine it with the [linux-surface](https://
 # Trouble shooting:
 
 ### Why aren't the modules loading?
-So in the setup wizard, there is an option to edit the GRUB preferences.
+So in the setup wizard, there is an option show the GRUB menu.
 
-This spits the command `sudo nano /etc/default/grub` and allows you to make whatever changes you would like.
+This spits the command `sudo sed -i 's/\<GRUB_TIMEOUT=0\>//g' /etc/default/grub`, effectively removing `GRUB_TIMEOUT=0` from the /etc/default/grub file, allowing the GRUB menu to be visible.
 
-I have found that distros like Ubuntu *love* to keep GRUB from showing, so you have to comment out "GRUB_TIMEOUT=0" to "#GRUB_TIMEOUT=0" in order to unhide it.
+I have found that distros like Ubuntu *love* to keep GRUB from showing, so you have to delete or comment out "GRUB_TIMEOUT=0" to "#GRUB_TIMEOUT=0" in order to unhide it.
 
 From there, you can then select the boot entry and be on your way to using your computer like a normal person.
 
