@@ -7,7 +7,7 @@ Requirements: `dialog` `nano`
 # ![screenshot](https://files.catbox.moe/dlm761.png)
 
 ### What does this do?
-Nothing you can't do yourself! I'm lazy and I don't like to do much work post-installation. This basically puts a pretty face on the [linux-surface](https://github.com/linux-surface/linux-surface) setup instructions.
+Nothing you can't do yourself! I'm lazy and I don't like to do much work post-installation. I took an older script I made, changed some commands, and called it a day. This basically puts a pretty face on the [linux-surface](https://github.com/linux-surface/linux-surface) setup instructions.
 
 ### Why should I trust you with my fresh install?
 Check the script yourself and cross examine it with the [linux-surface](https://github.com/linux-surface/linux-surface/wiki/Installation-and-Setup) setup guide. It's quite literally just spitting the instructed commands into a terminal.
