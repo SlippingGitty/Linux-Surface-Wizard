@@ -8,7 +8,7 @@ Requirements: `dialog` and `bash`
 # ![screenshot](https://files.catbox.moe/dlm761.png)
 
 ### What does this do?
-Nothing you can't do yourself! I'm lazy and I don't like to do much work post-installation. I took an older script I made, changed some commands, and called it a day. This basically puts a pretty face on the [linux-surface](https://github.com/linux-surface/linux-surface) setup instructions.
+Nothing you can't do yourself! I'm lazy and I don't like to do much work post-installation. This basically puts a pretty face on the [linux-surface](https://github.com/linux-surface/linux-surface) setup instructions.
 
 ### Why should I trust you with my fresh install?
 Check the script yourself and cross examine it with the [linux-surface](https://github.com/linux-surface/linux-surface/wiki/Installation-and-Setup) setup guide. It's quite literally just spitting the instructed commands into a terminal.
@@ -18,7 +18,7 @@ Check the script yourself and cross examine it with the [linux-surface](https://
 ### Why aren't the modules loading?
 So in the setup wizard, there is an option show the GRUB menu.
 
-This spits the command `sudo sed -i 's/\<GRUB_TIMEOUT=0\>//g' /etc/default/grub`, effectively removing `GRUB_TIMEOUT=0` from the /etc/default/grub file, allowing the GRUB menu to be visible.
+This spits the command `sudo sed -i 's/\<GRUB_TIMEOUT=0\>//g' /etc/default/grub`, effectively removing `GRUB_TIMEOUT=0` from the /etc/default/grub file, allowing the GRUB menu to be visible. (It also makes a backup just incase.)
 
 I have found that distros like Ubuntu *love* to keep GRUB from showing, so you have to delete or comment out "GRUB_TIMEOUT=0" to "#GRUB_TIMEOUT=0" in order to unhide it.
 
