@@ -58,7 +58,8 @@ clear
                 ;;
             5)
                 dialog  --title "Surface-Linux Setup Wizard" --infobox "This is going to remove GRUB_TIME=0 from your /etc/default/grub file. \n\nGRUB is a bootloader, and that's like, very important! \n\nYou can manually add this back yourself if you wish to hide it again." 10 70;sleep 5
-                sudo sed -i 's/\<GRUB_TIMEOUT=0\>//g' /etc/default/grub
+                sudo cp /etc/default/grub /etc/default/grub.bak
+		sudo sed -i 's/\<GRUB_TIMEOUT=0\>//g' /etc/default/grub
                 sudo update-grub
              # Removes the timeout for GRUB and shows the menu
                 ;;
