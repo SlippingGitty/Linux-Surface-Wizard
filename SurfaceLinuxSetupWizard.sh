@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Linux-Surface-Wizard is licensed under MIT license, see https://github.com/SlippingGitty/Linux-Surface-Wizard/blob/main/LICENSE for more info
 #    __  _  _ ___ ___ __   ______   _   _ __  _ _  ___   __   __  ___ _____ _  _ ___   _   _  _ ___  __  ___ __   
 #   /' _/| || | _ \ __/  \ / _/ __| | | | |  \| | || \ \_/ / /' _/| __|_   _| || | _,\ | | | || |_  |/  \| _ \ _\  
 #   `._`.| \/ | v / _| /\ | \_| _|  | |_| | | ' | \/ |> , <  `._`.| _|  | | | \/ | v_/ | 'V' || |/ /| /\ | v / v | 
@@ -59,7 +60,7 @@ clear
             5)
                 dialog  --title "Surface-Linux Setup Wizard" --infobox "This is going to remove GRUB_TIME=0 from your /etc/default/grub file. \n\nGRUB is a bootloader, and that's like, very important! \n\nYou can manually add this back yourself if you wish to hide it again." 10 70;sleep 5
                 sudo cp /etc/default/grub /etc/default/grub.bak
-		sudo sed -i 's/\<GRUB_TIMEOUT=0\>//g' /etc/default/grub
+		        sudo sed -i 's/\<GRUB_TIMEOUT=0\>//g' /etc/default/grub
                 sudo update-grub
              # Removes the timeout for GRUB and shows the menu
                 ;;
