@@ -50,7 +50,7 @@ clear
             # Installs the surface-linux modules and headers
                 ;;
             3)
-                su -c "apt install iptsd libwacom-surface && sudo systemctl enable iptsd"
+                su -c "apt install iptsd libwacom-surface && systemctl enable iptsd"
             # Installs and enables touchscreen support
                 ;;
             4)
