@@ -4,7 +4,9 @@ Requirements: `dialog` and `bash`
   * Set a password for the root user. This script uses `su -c` rather than `sudo`.
 
 ## Using:
-* Run `bash <( curl -s https://raw.githubusercontent.com/SlippingGitty/Linux-Surface-Wizard/main/SurfaceLinuxSetupWizard.sh )` in a terminal.
+* For Debian based distros: Run `bash <( curl -s https://raw.githubusercontent.com/SlippingGitty/Linux-Surface-Wizard/main/SurfaceLinuxSetupWizard.sh )` in a terminal.
+* For Arch based distros: Run `bash <( curl -s https://raw.githubusercontent.com/SlippingGitty/Linux-Surface-Wizard/main/SurfaceLinuxSetupWizardArch.sh )` in a terminal.
+* For Fedora based distros OTHER THAN FEDORA SILVERBLUE: Run `bash <( curl -s https://raw.githubusercontent.com/SlippingGitty/Linux-Surface-Wizard/main/SurfaceLinuxSetupWizardFedora.sh )` in a terminal.
 # ![screenshot](https://files.catbox.moe/dlm761.png)
 
 ### What does this do?
