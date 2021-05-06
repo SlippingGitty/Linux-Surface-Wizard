@@ -56,7 +56,7 @@ clear
                 ;;
             3)
                 su -c "pacman -S iptsd && systemctl enable iptsd"
-                dialog  --title "Linux-Surface Setup Wizard" --infobox "You may wish to install libwacom-surface. \n\nYou can do this using AUR or yum. \n\nDependencies are listed below the package in AUR, and they are automatically installed when using yum." 10 70;
+                dialog  --title "Linux-Surface Setup Wizard" --infobox "You may wish to install libwacom-surface. \n\nYou can do this using AUR or yum. \n\nDependencies are listed below the package in AUR, and they are automatically installed when using yay." 10 70;
                 sleep 5
             # Installs and enables touchscreen support
                 ;;
