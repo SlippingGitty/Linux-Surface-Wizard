@@ -1,4 +1,4 @@
-# Linux-Surface Wizard for Debian-based Distros that use systemd
+# Linux-Surface Wizard for Distros that use systemd
 
 Requirements: `dialog` and `bash`
   * Set a password for the root user. This script uses `su -c` rather than `sudo`.
