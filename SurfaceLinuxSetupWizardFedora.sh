@@ -22,7 +22,7 @@ fi
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4
-BACKTITLE="Apt Linux-Surface Setup Wizard"
+BACKTITLE="DNF Linux-Surface Setup Wizard"
 TITLE="Installer"
 MENU="Select an option:"
 
