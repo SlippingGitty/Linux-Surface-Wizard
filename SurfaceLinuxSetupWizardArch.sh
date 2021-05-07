@@ -9,6 +9,13 @@
 #            VERSION 2021.05.03.02
 
 #INITIAL INFO PROMPT
+y=0
+if yay -V;
+then
+    y=1
+else
+    y=2
+fi    
 if dialog  --title "Linux-Surface Setup Wizard" --infobox "Welcome. \n\nIf this is your first time running this script, please select option 1 before attempting to do anything else. \n\nAfterwards, select a function by typing the number that co-relates with the specific action you want to do." 10 70;
 then
     sleep 5
@@ -46,8 +53,14 @@ OPTIONS=(1  "Import keys and add repo"
 clear
     case $CHOICE in
             1) 
-               su -c 'curl -s https://raw.githubusercontent.com/linux-surface/linux-surface/master/pkg/keys/surface.asc \
-    | sudo pacman-key --add - && pacman-key --finger 56C464BAAC421453 && pacman-key --lsign-key 56C464BAAC421453 && cp /etc/pacman.conf /etc/pacman.conf.save && echo "[linux-surface]" >> /etc/pacman.conf && echo "Server = https://pkg.surfacelinux.com/arch/" >> /etc/pacman.conf && pacman -Syu'
+               if cat /etc/pacman.conf | grep "[linux-surface];
+               then
+                    dialog  --title "Linux-Surface Setup Wizard" --infobox "You already have the 'linux-surface' repo initialized" 10 70;
+                    sleep 5
+               else
+                    su -c 'curl -s https://raw.githubusercontent.com/linux-surface/linux-surface/master/pkg/keys/surface.asc \
+                    | sudo pacman-key --add - && pacman-key --finger 56C464BAAC421453 && pacman-key --lsign-key 56C464BAAC421453 && cp /etc/pacman.conf /etc/pacman.conf.save && echo "[linux-surface]" >> /etc/pacman.conf && echo "Server = https://pkg.surfacelinux.com/arch/" >> /etc/pacman.conf && pacman -Syu'
+                fi
             # Signs the repos needed to install the surface-linux packages
                 ;;
             2)
@@ -56,12 +69,24 @@ clear
                 ;;
             3)
                 su -c "pacman -S iptsd && systemctl enable iptsd"
-                dialog  --title "Linux-Surface Setup Wizard" --infobox "You may wish to install libwacom-surface. \n\nYou can do this using AUR or yum. \n\nDependencies are listed below the package in AUR, and they are automatically installed when using yay." 10 70;
-                sleep 5
+                if ((y -eq 1));
+                then
+                    yay -S libwacom-surface
+                else
+                    dialog  --title "Linux-Surface Setup Wizard" --infobox "You do not have yay installed on your system. \n\nPlease install it using AUR. \n\nDependencies are listed below the package in AUR, and install these before installing yay. \n\n Otherwise, you will not be able to install libwacom-surface or mokutil (required by linux-surface-secureboot-mok)"10 70;
+                    sleep 5
+                fi
             # Installs and enables touchscreen support
                 ;;
             4)
-                su -c "pacman -S linux-surface-secureboot-mok"
+                if ((y -eq 1));
+                then
+                    yay -S mokutil
+                    su -c "pacman -S linux-surface-secureboot-mok"
+                else
+                    dialog  --title "Linux-Surface Setup Wizard" --infobox "You do not have yay installed on your system. \n\nPlease install it using AUR. \n\nDependencies are listed below the package in AUR, and install these before installing yay. \n\n Otherwise, you will not be able to install libwacom-surface or mokutil (required by linux-surface-secureboot-mok)"10 70;
+                    sleep 5
+                fi
             # Installs and enables secure boot
                 ;;
             5)
