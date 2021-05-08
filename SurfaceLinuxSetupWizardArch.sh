@@ -53,7 +53,7 @@ OPTIONS=(1  "Import keys and add repo"
 clear
     case $CHOICE in
             1) 
-               if cat /etc/pacman.conf | grep "[linux-surface]";
+               if cat /etc/pacman.conf | grep -F "[linux-surface]";
                then
                     dialog  --title "Linux-Surface Setup Wizard" --infobox 'You already have the "linux-surface" repo initialized' 10 70;
                     sleep 5
@@ -69,7 +69,7 @@ clear
                 ;;
             3)
                 su -c "pacman -S iptsd && systemctl enable iptsd"
-                if ((y -eq 1));
+                if ((y == 1));
                 then
                     yay -S libwacom-surface
                 else
@@ -79,7 +79,7 @@ clear
             # Installs and enables touchscreen support
                 ;;
             4)
-                if ((y -eq 1));
+                if ((y == 1));
                 then
                     yay -S mokutil
                     su -c "pacman -S linux-surface-secureboot-mok"
@@ -90,7 +90,7 @@ clear
             # Installs and enables secure boot
                 ;;
             5)
-                dialog  --title "Surface-Linux Setup Wizard" --infobox "This is going to remove GRUB_TIME=0 from your /etc/default/grub file. \n\nGRUB is a bootloader, and that's like, very important! \n\nYou can manually add this back yourself if you wish to hide it again." 10 70;sleep 5
+                dialog  --title "Surface-Linux Setup Wizard" --infobox "This is going to remove GRUB_TIMEOUT=0 from your /etc/default/grub file. \n\nGRUB is a bootloader, and that's like, very important! \n\nYou can manually add this back yourself if you wish to hide it again." 10 70;sleep 5
                 clear
                 su -c "cp /etc/default/grub /etc/default/grub.bak && sed -i 's/\<GRUB_TIMEOUT=0\>//g' /etc/default/grub && grub-mkconfig -o /boot/grub/grub.cfg"
              # Removes the timeout for GRUB and shows the menu
