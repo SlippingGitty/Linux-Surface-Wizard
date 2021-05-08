@@ -53,9 +53,9 @@ OPTIONS=(1  "Import keys and add repo"
 clear
     case $CHOICE in
             1) 
-               if cat /etc/pacman.conf | grep "[linux-surface];
+               if cat /etc/pacman.conf | grep "[linux-surface]";
                then
-                    dialog  --title "Linux-Surface Setup Wizard" --infobox "You already have the 'linux-surface' repo initialized" 10 70;
+                    dialog  --title "Linux-Surface Setup Wizard" --infobox 'You already have the "linux-surface" repo initialized' 10 70;
                     sleep 5
                else
                     su -c 'curl -s https://raw.githubusercontent.com/linux-surface/linux-surface/master/pkg/keys/surface.asc \
@@ -73,7 +73,7 @@ clear
                 then
                     yay -S libwacom-surface
                 else
-                    dialog  --title "Linux-Surface Setup Wizard" --infobox "You do not have yay installed on your system. \n\nPlease install it using AUR. \n\nDependencies are listed below the package in AUR, and install these before installing yay. \n\n Otherwise, you will not be able to install libwacom-surface or mokutil (required by linux-surface-secureboot-mok)"10 70;
+                    dialog  --title "Linux-Surface Setup Wizard" --infobox 'You do not have yay installed on your system. \n\nPlease install it using AUR. \n\nDependencies are listed below the package in AUR, and install these before installing yay. \n\n Otherwise, you will not be able to install libwacom-surface or mokutil (required by linux-surface-secureboot-mok)'10 70;
                     sleep 5
                 fi
             # Installs and enables touchscreen support
@@ -84,7 +84,7 @@ clear
                     yay -S mokutil
                     su -c "pacman -S linux-surface-secureboot-mok"
                 else
-                    dialog  --title "Linux-Surface Setup Wizard" --infobox "You do not have yay installed on your system. \n\nPlease install it using AUR. \n\nDependencies are listed below the package in AUR, and install these before installing yay. \n\n Otherwise, you will not be able to install libwacom-surface or mokutil (required by linux-surface-secureboot-mok)"10 70;
+                    dialog  --title "Linux-Surface Setup Wizard" --infobox 'You do not have yay installed on your system. \n\nPlease install it using AUR. \n\nDependencies are listed below the package in AUR, and install these before installing yay. \n\n Otherwise, you will not be able to install libwacom-surface or mokutil (required by linux-surface-secureboot-mok)'10 70;
                     sleep 5
                 fi
             # Installs and enables secure boot
