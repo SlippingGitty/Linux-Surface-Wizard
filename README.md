@@ -17,6 +17,8 @@ Check the script yourself and cross examine it with the [linux-surface](https://
 
 # Trouble shooting:
 
+### Check out the [Wiki!](https://github.com/SlippingGitty/Linux-Surface-Wizard/wiki)
+
 ### Why aren't the modules loading?
 So in the setup wizard, there is an option show the GRUB menu.
 
