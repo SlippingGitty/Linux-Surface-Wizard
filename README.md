@@ -23,13 +23,15 @@ Check the script yourself and cross examine it with the [linux-surface](https://
 ### Check out the [Wiki!](https://github.com/SlippingGitty/Linux-Surface-Wizard/wiki)
 
 ### Why aren't the modules loading?
-So in the setup wizard, there is an option show the GRUB menu.
+This may be because the wrong kernel is being loaded.
 
-This spits the command `sudo sed -i 's/\<GRUB_TIMEOUT=0\>//g' /etc/default/grub`, effectively removing `GRUB_TIMEOUT=0` from the /etc/default/grub file, allowing the GRUB menu to be visible. (It also makes a backup just incase.)
+As a way to debug, in the setup wizard, there is an option show the GRUB menu.
+
+This spits the command `sudo sed -i 's/\<GRUB_TIMEOUT=0\>//g' /etc/default/grub`, effectively removing `GRUB_TIMEOUT=0` from the /etc/default/grub file, allowing the GRUB menu to be visible. (It also makes a backup to /etc/default/grub.bak just in case. To restore it, simply run `cp /etc/default/grub.bak /etc/default/grub` as root.)
 
 I have found that distros like Ubuntu *love* to keep GRUB from showing, so you have to delete or comment out "GRUB_TIMEOUT=0" to "#GRUB_TIMEOUT=0" in order to unhide it.
 
-From there, you can then select the boot entry and be on your way to using your computer like a normal person.
+From there, you can then select the boot entry from the GRUB menu and be on your way to using your computer like a normal person.
 
 ### Where do I start?
 1, 2, preferably 3, then optionally 4. If neccessary, 5, then finish with 6 and reboot to see if it worked.
