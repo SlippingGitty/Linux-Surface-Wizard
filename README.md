@@ -13,9 +13,9 @@ Requirements:
 # ![screenshot](https://files.catbox.moe/dlm761.png)
 
 ### What does this do?
-Nothing you can't do yourself! I'm lazy and I don't like to do much work post-installation. This basically puts a pretty face on the [linux-surface](https://github.com/linux-surface/linux-surface) setup instructions.
+Nothing you can't do yourself! This basically puts a pretty face on the [linux-surface](https://github.com/linux-surface/linux-surface) setup instructions.
 
-### Why should I trust you with my fresh install?
+### Why should I trust this with my fresh install?
 Check the script yourself and cross examine it with the [linux-surface](https://github.com/linux-surface/linux-surface/wiki/Installation-and-Setup) setup guide. It's quite literally just spitting the instructed commands into a terminal.
 
 # Trouble shooting:
@@ -29,7 +29,7 @@ As a way to debug, in the setup wizard, there is an option show the GRUB menu.
 
 This spits the command `sudo sed -i 's/\<GRUB_TIMEOUT=0\>//g' /etc/default/grub`, effectively removing `GRUB_TIMEOUT=0` from the /etc/default/grub file, allowing the GRUB menu to be visible. (It also makes a backup to /etc/default/grub.bak just in case. To restore it, simply run `cp /etc/default/grub.bak /etc/default/grub` as root.)
 
-I have found that distros like Ubuntu *love* to keep GRUB from showing, so you have to delete or comment out "GRUB_TIMEOUT=0" to "#GRUB_TIMEOUT=0" in order to unhide it.
+Some distros such as Ubuntu hide the GRUB menu by default, so you have to delete or comment out "GRUB_TIMEOUT=0" to "#GRUB_TIMEOUT=0" in order to unhide it.
 
 From there, you can then select the boot entry from the GRUB menu and be on your way to using your computer like a normal person.
 
@@ -37,7 +37,7 @@ From there, you can then select the boot entry from the GRUB menu and be on your
 1, 2, preferably 3, then optionally 4. If neccessary, 5, then finish with 6 and reboot to see if it worked.
 
 ### Hey! Something isn't working!
-lol submit an issue and I'll get to you as soon as I can.
+Submit an issue and we'll get to you as soon as possible.
 ___
 
 Or you can do it manually! https://github.com/linux-surface/linux-surface/wiki/Installation-and-Setup
