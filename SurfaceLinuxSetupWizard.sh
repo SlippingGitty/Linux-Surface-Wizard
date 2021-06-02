@@ -57,7 +57,7 @@ clear
             # Signs the repos needed to install the surface-linux packages
                 ;;
             2)
-                su -c "apt install linux-image-surface linux-headers-surface"
+                su -c "apt install linux-image-surface linux-headers-surface surface-ath10k-firmware-override"
             # Installs the surface-linux modules and headers
                 ;;
             3)
