@@ -51,7 +51,7 @@ clear
     --add-repo=https://pkg.surfacelinux.com/fedora/linux-surface.repo'            # Signs the repos needed to install the surface-linux packages
                 ;;
             2)
-                su -c "dnf install --allowerasing kernel-surface"
+                su -c "dnf install --allowerasing kernel-surface surface-ath10k-firmware-override"
             # Installs the surface-linux modules and headers
                 ;;
             3)
