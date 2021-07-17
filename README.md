@@ -12,11 +12,8 @@ Requirements:
 * For Fedora based distros OTHER THAN FEDORA SILVERBLUE: Run `bash <( curl -s https://raw.githubusercontent.com/SlippingGitty/Linux-Surface-Wizard/main/SurfaceLinuxSetupWizardFedora.sh)` in a terminal.
 # ![screenshot](https://files.catbox.moe/dlm761.png)
 
-### What does this do?
-Nothing you can't do yourself! This basically puts a pretty face on the [linux-surface](https://github.com/linux-surface/linux-surface) setup instructions.
-
-### Why should I trust this with my fresh install?
-Check the script yourself and cross examine it with the [linux-surface](https://github.com/linux-surface/linux-surface/wiki/Installation-and-Setup) setup guide. It's quite literally just spitting the instructed commands into a terminal.
+### What does this do, and why should I trust this with my fresh install?
+In a nutshell, this puts a pretty face on the [linux-surface](https://github.com/linux-surface/linux-surface) setup instructions. If you feel unweary about this, you can check the scripts yourself, and cross examine it with the [linux-surface](https://github.com/linux-surface/linux-surface/wiki/Installation-and-Setup) setup guide. It's quite literally just spitting the instructed commands into a terminal.
 
 # Trouble shooting:
 
