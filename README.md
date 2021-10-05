@@ -1,6 +1,7 @@
-# Linux-Surface Wizard for Distros that use systemd
+# Linux-Surface Wizard
 
 Requirements:
+  * systemd
   * `dialog`
   * `bash`
   * `yay`(for Arch)
