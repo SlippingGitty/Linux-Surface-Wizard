@@ -23,12 +23,7 @@ TITLE="▼ Installer ▼"
 MENU="Select an option:"
 
 while [ "$CHOICE -ne 4" ]; do
-    CHOICE=$(dialog --clear \
-                --backtitle "$BACKTITLE" \
-                --title "$TITLE" \
-                --menu "$MENU" \
-                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                "${OPTIONS[@]}" \
+@@ -35,48 +32,66 @@ while [ "$CHOICE -ne 4" ]; do
                 2>&1 >/dev/tty)
 
 #OPTIONS NAMES
