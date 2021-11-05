@@ -48,7 +48,7 @@ clear
             1) 
 	    	if ls /etc/apt/sources.list.d | grep -F "linux-surface.list" 
 		then
-		d	ialog  --title "Linux-Surface Setup Wizard" --infobox 'You already have the "linux-surface" repo initialized' 10 70;
+		dialog  --title "Linux-Surface Setup Wizard" --infobox 'You already have the "linux-surface" repo initialized' 10 70;
 		else
                		su -c "wget -qO - https://raw.githubusercontent.com/linux-surface/linux-surface/master/pkg/keys/surface.asc \
     | gpg --dearmor | dd of=/etc/apt/trusted.gpg.d/linux-surface.gpg && echo 'deb [arch=amd64] https://pkg.surfacelinux.com/debian release main' \
