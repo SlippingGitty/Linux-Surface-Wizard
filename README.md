@@ -31,6 +31,12 @@ Some distros such as Ubuntu hide the GRUB menu by default, so you have to delete
 
 From there, you can then select the boot entry from the GRUB menu and be on your way to using your computer like a normal person.
 
+### Why isn't my touchscreen/pen/camera/etc working?
+
+Please check [linux-surface/Feature Matrix](https://github.com/linux-surface/linux-surface/wiki/Supported-Devices-and-Features#feature-matrix).
+
+
+
 ### Where do I start?
 1, 2, preferably 3, then optionally 4. If neccessary, 5, then finish with 6 and reboot to see if it worked.
 
