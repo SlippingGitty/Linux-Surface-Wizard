@@ -55,7 +55,7 @@ clear
 	| tee /etc/apt/sources.list.d/linux-surface.list && apt update"
 		 fi
             # Signs the repos needed to install the surface-linux packages
-                ;;
+		;;
             2)
                 su -c "apt install linux-image-surface linux-headers-surface surface-ath10k-firmware-override"
             # Installs the surface-linux modules and headers
