@@ -4,7 +4,7 @@ Requirements:
   * systemd
   * `dialog`
   * `bash`
-  * `yay`(for Arch)
+  * `yay`(if you use Arch)
   * Password for the root user. This script uses `su -c` rather than `sudo`.
 
 ## Using:
